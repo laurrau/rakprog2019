@@ -9,23 +9,23 @@ console.log(title, cost, src);
 //alert(`Title: ${title} cost: ${cost} path: ${src}`)
 
 
-const container = document.createElement(tagName:"div");
+const container = document.createElement("div");
 container.className = "itemContainer";
 
-const image = document.createElement(tagName: "img");
+const image = document.createElement("img");
 image.src = src;
 image.className = "item__image";
 
-const titleElement = document.createElement(tagName:"h2");
+const titleElement = document.createElement("h2");
 titleElement.textContent = title;
 titleElement.className = "item__title";
 
 const description = "Lorem Ipsum...lisan"
-const textElement = document.createElement(tagName:"p");
+const textElement = document.createElement("p");
 textElement.textContent = description;
 textElement.className = "item__description";
 
-const costElement = document.createElement(tagnName:"div");
+const costElement = document.createElement("div");
 costElement.textContent = cost;
 costElement.className = "item__price";
 
@@ -34,7 +34,7 @@ container.append(image);
 container.append(textElement);
 container.append(costElement);
 
-window.addEventListener(type:"load", listener:() =>{
-    const app = document.getElementById(elemendid:"item-body");
+window.addEventListener("load", () =>{
+    const app = document.getElementById("item-body");
     app.append(container);
 });
