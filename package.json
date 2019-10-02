@@ -2,9 +2,21 @@
   "name": "rp2019",
   "version": "1.0.0",
   "scripts": {
-  	"start": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "description": "Tlu repo\r proov1",
+  "main": "lesson1.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurrau/rakprog2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurrau/rakprog2019/issues"
+  },
+  "homepage": "https://github.com/laurrau/rakprog2019#readme"
 }
