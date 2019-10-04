@@ -17,7 +17,7 @@ function createItemElement(item){
     const itemContainer = document.createElement("div");
     itemContainer.className ="item";
 
-    const itemContainer = document.createElement("img");
+    const imgElement = document.createElement("img");
     imgElement.src = item.imgSrc;
 
     const priceElement = document.createElement("div");
@@ -26,7 +26,7 @@ function createItemElement(item){
     
 
     const titleElement = document.createElement("div");
-    titleElement.className = item__title;
+    titleElement.className = "item__title";
     titleElement.textContent =item.title;
 
     anchor.append(itemContainer);
