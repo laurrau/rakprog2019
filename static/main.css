@@ -21,11 +21,14 @@ body {
 .content{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .item {
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 5px;
+    width: 300px;
+    margin-bottom: 25px;
 }
 .item:hover{
     transition: .5s all;
@@ -40,7 +43,8 @@ body {
     font-size: 25px;
 }
 .item__price{
-    color: #e68e3c;
+    color: black;
+    font-weight: bold;
     font-size: 18px;
 }
 .content a {
@@ -55,4 +59,8 @@ text-decoration: none;
 
 .itemContainer .item__image{
     width: 200px;
+}
+
+.category-wrapper {
+    padding:25px;
 }

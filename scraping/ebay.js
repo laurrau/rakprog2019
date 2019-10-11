@@ -1,15 +1,15 @@
 // needs scope
 {
-  const itemContainerClass = "s-item   ";
+  const itemContainerClass = "s-item";
   const imageClass = "s-item__image-img";
   const titleClass = "s-item__title";
   const priceClass = "s-item__price";
 
-  const items = document.getElementsByClassName(itemContainerClass);
-
+  const items = document.getElementsByClassName("s-item")
+  console.log(items);
   const arr = [];
 
-  // HTMLDivElement[] to Array
+   HTMLDivElement[] to Array
   Array.from(items).forEach( item =>{
     const imgs = item.getElementsByClassName(imageClass);
     if(imgs.length === 0 ) return; // some have 0, skip them
@@ -31,5 +31,5 @@
 
   });
 
-  console.log(JSON.stringify(arr));
+  console.log(JSON.stringify(arr)); 
 }
