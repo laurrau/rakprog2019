@@ -2,7 +2,9 @@
   "name": "rp2019",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server.js"
+    "build": "webpack",
+    "start": "node server.js",
+    "start:dev": "npm run build && npm run start"
   },
   "dependencies": {
     "express": "^4.17.1"
@@ -18,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/laurrau/rakprog2019/issues"
   },
-  "homepage": "https://github.com/laurrau/rakprog2019#readme"
+  "homepage": "https://github.com/laurrau/rakprog2019#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  }
 }

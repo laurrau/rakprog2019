@@ -1,4 +1,4 @@
-//const utils2 = require("./utils2");
+const utils = require("./utils.js");
 
 console.log("itemsList.js loaded");
 
@@ -7,7 +7,7 @@ const laptops = [{ "imgSrc": "https://i.ebayimg.com/thumbs/images/m/mKMW1KKQIIm9
 
 const categories = {
     PHONE: "phones",
-    LAPTOP: "laptops", 
+    LAPTOP: "laptop", 
 };
 
 // Initial state
@@ -27,8 +27,13 @@ function createItems(){
     else if(selectedCategory === categories.LAPTOP){
         items = laptops;
     }
-    items.forEach((phone)=>{
-        const element = createItemElement(phone);
+
+    console.log("items", items);
+
+    items.forEach((item)=>{
+        const element = utils.createItemElement(item);
+
+        console.log("root", root);
         root.append(element);
     })
 }
@@ -36,14 +41,20 @@ function createItems(){
 function setupCategoryListener(){
     const dropdown = document.getElementById("category-dropdown");
     dropdown.addEventListener('change', (event) => {
-        //console.log(event.target.value);
+        console.log(event.target.value);
         selectedCategory = event.target.value;
         createItems();
     });
 }
 
-window.addEventListener("load", () =>{
-    console.log("Document loaded, itemsList.js");
+function setup(){
+    //run only at homepage
+    const root = document.getElementById("item-list");
+    if(!root) return;
     createItems();
     setupCategoryListener();
-});
+}
+
+module.exports = {
+    setup, 
+};
