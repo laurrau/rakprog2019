@@ -2,10 +2,10 @@ import  React from "react";
 import PropTypes from "prop-types";
 import "./checkbox.css"; // https://codepen.io/webdevian/pen/NjQdKK/
 
-const Checkbox = ({name, onChange}) => (
+const Checkbox = ({name, onChange, checked}) => (
         <div className="toggler">
             <div className={"toggler__name"}>{name}</div>
-            <input id={name} name={name} type="checkbox" onChange={onChange}/>
+            <input id={name} name={name} type="checkbox" onChange={onChange} checked={checked}/>
             <label htmlFor={name}>
                     <svg className="toggler-on"
                      version="1.1"
