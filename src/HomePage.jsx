@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header.jsx";
-import ItemList from "./ItemList.jsx";
+import ItemsList from "./ItemsList.jsx";
 import Checkbox from "./Checkbox.jsx";
 import PropTypes from "prop-types";
 import "./homepage.css";
@@ -80,21 +80,25 @@ class HomePage extends React.PureComponent{
         return (
             <>
               <Header/>
-              <ItemFilters
-              allCategories={this.state.allCategories}
-              handleDropdown={this.handleDropdown}
-              isSelected={this.isSelected}
-              />
-              <div className={"items-settings"}>
-                  <div>
-                      Items found {items.length} {this.state.selectedCategories.join(", ")}
-                  </div>
-                <SortDropdown 
-                direction={this.state.sortDirection}
-                onChange={this.handleSortDropdown}
-                />
+              <div className={"body-wrapper"}>
+                <div className={"filters-wrapper"}>
+                    <ItemFilters
+                    allCategories={this.state.allCategories}
+                    handleDropdown={this.handleDropdown}
+                    isSelected={this.isSelected}
+                    />
+                </div>
+                <div className={"items-header-wrapper"}>
+                    <div>
+                        Items found {items.length} {this.state.selectedCategories.join(", ")}
+                    </div>
+                    <SortDropdown 
+                    direction={this.state.sortDirection}
+                    onChange={this.handleSortDropdown}
+                    />
+                </div>
+                <ItemsList items={items} />
               </div>
-              <ItemList items={items} />
             </>
         );  
     }
@@ -102,7 +106,7 @@ class HomePage extends React.PureComponent{
 
 const ItemFilters = ({allCategories, handleDropdown, isSelected}) => {
     return (
-        <div className ={"itemFilters-wrapper"}>
+        <>
        {
             allCategories.map( categoryName => {
                 return (
@@ -115,7 +119,7 @@ const ItemFilters = ({allCategories, handleDropdown, isSelected}) => {
                 );
             })
         }
-        </div>
+        </>
     );
 };
 
