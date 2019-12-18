@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "./Header.jsx";
-import ItemsList from "./ItemsList.jsx";
-import Checkbox from "./Checkbox.jsx";
+import ItemsList from "../components/ItemsList.jsx";
+import Checkbox from "../components/Checkbox.jsx";
 import PropTypes from "prop-types";
 import "./homepage.css";
-import SortDropdown from "./SortDropdown.jsx";
+import SortDropdown from "../components/SortDropdown.jsx";
 
 
 class HomePage extends React.PureComponent{
@@ -79,7 +78,6 @@ class HomePage extends React.PureComponent{
         const items = this.getVisibleItems();
         return (
             <>
-              <Header/>
               <div className={"body-wrapper"}>
                 <div className={"filters-wrapper"}>
                     <ItemFilters
